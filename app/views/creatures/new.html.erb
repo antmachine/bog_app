@@ -1,0 +1,8 @@
+<form action="/creatures" method="post">
+    <input type="text" name="creature[name]">
+    <textarea name="creature[description]"></textarea>
+    <%= token_tag form_authenticity_token %>
+    
+    <button> Save Creature </button>
+
+</form>
