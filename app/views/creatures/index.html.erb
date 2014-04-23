@@ -1,8 +1,12 @@
 <% @creatures.each do |creature| %>
-
-    <div>
+		<div>
         Name: <%= creature[:name] %> <br>
         Description: <%= creature[:description] %>
     </div>
-
 <% end %>
+
+ <br>
+    <a href="creatures/new">Add a creature</a>
+
+       <!-- TODO add code to display specific creature
+    <a href="creatures/n">Add a creature</a>

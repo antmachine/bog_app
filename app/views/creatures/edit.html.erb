@@ -1,0 +1,21 @@
+<!-- Display list of current creatures and ask user
+which creature they would like to update/ edit. -->
+
+
+Here's a list of the creatures currently stored in the database.
+
+<% @creatures.each do |creature| %>
+		<div>
+        Name: <%= creature[:name] %> <br>
+        <!-- Description: <%= creature[:description] %> -->
+    </div>
+<% end %>
+
+<form action="/creatures/edit" method="post">
+    Which creature would you like to edit?:<br>
+    <input type="text" name="creature[name]"><br>
+    <%= token_tag form_authenticity_token %>
+    
+    <button> Edit Creature </button>
+
+</form>
