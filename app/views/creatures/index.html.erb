@@ -1,12 +1,22 @@
-<% @creatures.each do |creature| %>
-		<div>
-        Name: <%= creature[:name] %> <br>
-        Description: <%= creature[:description] %>
-    </div>
-<% end %>
+<h1>Creatures in the bog:</h1>
+<section>
+	<% @creatures.each do |creature| %>
+		<form action="/delete/<%= creature[:id] %>" method="post">
+		<p> <%= creature[:id] %>. Name: <%= creature[:name] %> <br>
+			Description: <%= creature[:description] %>
+		<a href="/edit/<%= creature[:id] %>"><button style="border:1px dashed black; background-color: light;">edit</button></a>
 
- <br>
-    <a href="creatures/new">Add a creature</a>
+				<button style="border:1px solid black; background-color: light;">delete</button>
+				<%= token_tag form_authenticity_token %>
+		</form>
+		</p>
 
-       <!-- TODO add code to display specific creature
-    <a href="creatures/n">Add a creature</a>
+	<% end %>
+</section>
+<h2>Create new creature:</h2>
+<form action='/creatures' method="post" style="margin-bottom:10px;padding:5px;">
+    <input type="text" name="creature[name]" placeholder="name"><br>
+    <textarea name="creature[description]" placeholder="description"></textarea>
+    	<%= token_tag form_authenticity_token %>
+    <button style="border: 1px solid black; background-color: white;">add</button>
+</form>

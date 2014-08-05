@@ -1,4 +1,3 @@
 <div>
-    Name: <%= @creature.name %> <br>
-    Description: <%= @creature.description %>
+    <%= Creature.find(params[:id])["name"] %>
 </div>

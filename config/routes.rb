@@ -2,15 +2,15 @@ BogApp::Application.routes.draw do
 
   root to: 'creatures#index'
 
-  resources :creatures
+  get '/creatures', to: 'creatures#index'
 
-  # get '/creatures', to: 'creatures#index'
+  post '/creatures', to: 'creatures#create'
 
-  # get '/creatures/new', to: 'creatures#new'
+  get '/edit/:id', to: 'creatures#edit'
 
-  # get '/creatures/edit', to: 'creatures#edit'
+  post '/edit/:id', to: 'creatures#update'
 
-  # get '/creatures/:id', to: 'creatures#show'
+  get '/creatures/:id', to: 'creatures#show'
 
-  # post '/creatures', to: 'creatures#create'
+  post '/delete/:id', to: 'creatures#delete'
 end
