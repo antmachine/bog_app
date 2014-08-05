@@ -1,34 +1,10 @@
-# A "Bog" Adventure App - Intro to Rails 
+This is a simple app to show RESTful HTTP practices.
 
-| Background |
-| :---- |
-| A bog is a mire that accumulates peat, a deposit of dead plant material—often mosses. |
+Download & clone as you please.
 
-Researchers at your local biology lab are exploring and documenting a series of bogs, and the creatures of interest. Our job is to encourage people in the community to explore the bogs and submit their findings using our web application.
+Run 'rake db:create && rake db:migrate' to set up the SQLite database.
 
-We'll be creating a single model app to demonstrate editing resources.
-It's important to get comfortable with the process of starting a new Rails app since you'll be doing that for quite awhile
+Use 'rails s' in the Terminal, then navigate to 'localhost:3000' in your browser to play!
 
-We've determined we'll need the following:
-
-### Bog Controller
-
-* A controller that manages bog creature
-
-### Bog Model
-
-* A creature model that stores `name` and `description`
-
-### Bog Views
-
-* A page with a form to submit a *new* creature
-* A page to view a list of all *creatures*
-
-### Bonus Views
-* A page with a form to edit a *creature* already submitted
-* A page to view just one *creature*
-
-### Challenge
-
-* Make a nav bar for navigating to the different *bog views*
-* Make a delete button for each *bog creature*
+If you want to play around with it right away, a functional version can be found online at ant-bog.herokuapp.com
+Warning: It's deployed with a SQLite database, and Heroku will peridocically delete this data online.
