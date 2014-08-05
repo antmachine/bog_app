@@ -21,10 +21,14 @@ class CreaturesController < ApplicationController
 		render :show
 	end
 
-	# def edit
-	# 	@creatures = Creature.all
-	# 	render :edit
-	# end
+	def edit
+		creature_id = params[:id]
+		creature = Creature.find(creature_id)
+		# Require looks for a specific key in params hash. If not there, it won't work.
+		# .update will run a SQL statement
+		updated_attributes = params.require(:creature).permit(:name, :description)
+		redirect_to "/creatures/#{creature_id}"
+	end
 
 
 
