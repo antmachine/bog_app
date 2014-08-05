@@ -2,7 +2,7 @@ This is a simple app to show RESTful HTTP practices.
 
 Download & clone as you please.
 
-Run 'rake db:create && rake db:migrate' to set up the SQLite database.
+Run 'rake db:create && rake db:migrate' to set up the postgresql database.
 
 Use 'rails s' in the Terminal, then navigate to 'localhost:3000' in your browser to play!
 
