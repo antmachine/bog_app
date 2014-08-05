@@ -4,32 +4,31 @@ class CreaturesController < ApplicationController
 		render :index
 	end
 
-	def new
-		render :new
-	end
-
 	def create
 		creature = params.require(:creature).permit(:name, :description)
-		creature = Creature.create(creature)
-		redirect_to "/creatures/#{creature.id}"
+		Creature.create(creature)
+		redirect_to "/creatures"
 	end
 
 	def show
-		creature_id = params[:id]
-		@creature = Creature.find(creature_id)
-		#p @creature
+		@creature_id = params[:id]
 		render :show
 	end
 
 	def edit
-		creature_id = params[:id]
-		creature = Creature.find(creature_id)
-		# Require looks for a specific key in params hash. If not there, it won't work.
-		# .update will run a SQL statement
-		updated_attributes = params.require(:creature).permit(:name, :description)
-		redirect_to "/creatures/#{creature_id}"
+		render :edit
 	end
 
+	def update
+		creature_id = params[:id]
+		creature = Creature.find(creature_id)
+		changed_creature = params.require(:creature).permit(:name, :description)
+		Creature.update(creature, changed_creature)
+		redirect_to '/creatures'
+	end
 
-
+	def delete
+		Creature.delete(params[:id])
+		redirect_to '/'
+	end
 end
